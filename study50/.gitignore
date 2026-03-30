@@ -1,0 +1,18 @@
+# Neo4j
+data/
+transactions/
+databases/
+neo4j/data/
+
+# AI
+models/
+*.bin
+*.pt
+*.safetensors
+
+# Python
+.venv/
+__pycache__/
+
+# logs
+*.log

@@ -32,7 +32,7 @@ class GraphResponse(BaseModel):
 # ---------------------------
 # Ollama LLM 호출 함수
 # ---------------------------
-def llm_call_structured(prompt: str, model: str = "mistral-nemo:latest") -> GraphResponse:
+def llm_call_structured(prompt: str, model: str = "llama3.1:latest") -> GraphResponse:
 
   final_prompt = prompt + """
   Return ONLY valid JSON. Do NOT include explanations or commentary.

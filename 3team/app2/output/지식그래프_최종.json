@@ -1,0 +1,1825 @@
+{
+  "nodes": [
+    {
+      "id": "H01",
+      "label": "인간",
+      "properties": {
+        "name": "지우"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "피카츄"
+      }
+    },
+    {
+      "id": "H02",
+      "label": "인간",
+      "properties": {
+        "name": "이슬"
+      }
+    },
+    {
+      "id": "V02",
+      "label": "악당",
+      "properties": {
+        "name": "로사"
+      }
+    },
+    {
+      "id": "V03",
+      "label": "악당",
+      "properties": {
+        "name": "로이"
+      }
+    },
+    {
+      "id": "P15",
+      "label": "포켓몬",
+      "properties": {
+        "name": "나옹"
+      }
+    },
+    {
+      "id": "P26",
+      "label": "포켓몬",
+      "properties": {
+        "name": "팬텀"
+      }
+    },
+    {
+      "id": "P05",
+      "label": "포켓몬",
+      "properties": {
+        "name": "헤라크로스"
+      }
+    },
+    {
+      "id": "P13",
+      "label": "포켓몬",
+      "properties": {
+        "name": "캐터피"
+      }
+    },
+    {
+      "id": "PH02",
+      "label": "현상",
+      "properties": {
+        "name": "유대진화"
+      }
+    },
+    {
+      "id": "PH05",
+      "label": "현상",
+      "properties": {
+        "name": "테라스탈"
+      }
+    },
+    {
+      "id": "S01",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: Indigo League"
+      }
+    },
+    {
+      "id": "P02",
+      "label": "포켓몬",
+      "properties": {
+        "name": "단데기"
+      }
+    },
+    {
+      "id": "PH06",
+      "label": "현상",
+      "properties": {
+        "name": "거다이맥스"
+      }
+    },
+    {
+      "id": "H03",
+      "label": "인간",
+      "properties": {
+        "name": "웅"
+      }
+    },
+    {
+      "id": "O01",
+      "label": "조직",
+      "properties": {
+        "name": "로켓단"
+      }
+    },
+    {
+      "id": "H20",
+      "label": "인간",
+      "properties": {
+        "name": "오바람"
+      }
+    },
+    {
+      "id": "S02",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: Adventures in the Orange Islands"
+      }
+    },
+    {
+      "id": "P05",
+      "label": "포켓몬",
+      "properties": {
+        "name": "이상해씨"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "버터플"
+      }
+    },
+    {
+      "id": "P27",
+      "label": "포켓몬",
+      "properties": {
+        "name": "잉어킹"
+      }
+    },
+    {
+      "id": "S23",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon Journeys: The Series"
+      }
+    },
+    {
+      "id": "H18",
+      "label": "인간",
+      "properties": {
+        "name": "고우"
+      }
+    },
+    {
+      "id": "P02",
+      "label": "포켓몬",
+      "properties": {
+        "name": "리자몽"
+      }
+    },
+    {
+      "id": "P04",
+      "label": "포켓몬",
+      "properties": {
+        "name": "라프라스"
+      }
+    },
+    {
+      "id": "S04",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: Johto League Champions"
+      }
+    },
+    {
+      "id": "P03",
+      "label": "포켓몬",
+      "properties": {
+        "name": "잠만보"
+      }
+    },
+    {
+      "id": "PH01",
+      "label": "현상",
+      "properties": {
+        "name": "메가진화"
+      }
+    },
+    {
+      "id": "V01",
+      "label": "악당",
+      "properties": {
+        "name": "로사"
+      }
+    },
+    {
+      "id": "V02",
+      "label": "악당",
+      "properties": {
+        "name": "로이"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "고오스"
+      }
+    },
+    {
+      "id": "S07",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: Advanced Challenge"
+      }
+    },
+    {
+      "id": "H05",
+      "label": "인간",
+      "properties": {
+        "name": "고우스트"
+      }
+    },
+    {
+      "id": "V01",
+      "label": "악당",
+      "properties": {
+        "name": "Sabrina"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "윤겔라"
+      }
+    },
+    {
+      "id": "P05",
+      "label": "포켓몬",
+      "properties": {
+        "name": "피카츄"
+      }
+    },
+    {
+      "id": "P05",
+      "label": "포켓몬",
+      "properties": {
+        "name": "성원숭"
+      }
+    },
+    {
+      "id": "PH05",
+      "label": "현상",
+      "properties": {
+        "name": "슬리프"
+      }
+    },
+    {
+      "id": "S03",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: The Johto Journeys"
+      }
+    },
+    {
+      "id": "H05",
+      "label": "인간",
+      "properties": {
+        "name": "지우"
+      }
+    },
+    {
+      "id": "P04",
+      "label": "포켓몬",
+      "properties": {
+        "name": "포니타"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "메타몽"
+      }
+    },
+    {
+      "id": "H18",
+      "label": "인간",
+      "properties": {
+        "name": "Mikey"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "이브이"
+      }
+    },
+    {
+      "id": "S17",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon the Series: XY"
+      }
+    },
+    {
+      "id": "P25",
+      "label": "포켓몬",
+      "properties": {
+        "name": "잠만보"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "파이리"
+      }
+    },
+    {
+      "id": "H02",
+      "label": "인간",
+      "properties": {
+        "name": "로사"
+      }
+    },
+    {
+      "id": "H05",
+      "label": "인간",
+      "properties": {
+        "name": "로이"
+      }
+    },
+    {
+      "id": "P26",
+      "label": "포켓몬",
+      "properties": {
+        "name": "파오리"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "토게피"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "이상해씨"
+      }
+    },
+    {
+      "id": "PH02",
+      "label": "현상",
+      "properties": {
+        "name": "Evolution"
+      }
+    },
+    {
+      "id": "H18",
+      "label": "인간",
+      "properties": {
+        "name": "Todd Snap"
+      }
+    },
+    {
+      "id": "PH05",
+      "label": "현상",
+      "properties": {
+        "name": "Team Rocket's attack"
+      }
+    },
+    {
+      "id": "P01",
+      "label": "포켓몬",
+      "properties": {
+        "name": "고라파덕"
+      }
+    },
+    {
+      "id": "V04",
+      "label": "악당",
+      "properties": {
+        "name": "부치"
+      }
+    },
+    {
+      "id": "V05",
+      "label": "악당",
+      "properties": {
+        "name": "카시디"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "베이리프"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "아쿠스타"
+      }
+    },
+    {
+      "id": "P13",
+      "label": "포켓몬",
+      "properties": {
+        "name": "쏘드라"
+      }
+    },
+    {
+      "id": "PH05",
+      "label": "현상",
+      "properties": {
+        "name": "뮤츠"
+      }
+    },
+    {
+      "id": "H09",
+      "label": "인간",
+      "properties": {
+        "name": "로사"
+      }
+    },
+    {
+      "id": "S05",
+      "label": "시즌",
+      "properties": {
+        "name": "Pokémon: Master Quest"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "셀러"
+      }
+    },
+    {
+      "id": "SURFING",
+      "label": "활동",
+      "properties": {
+        "name": "Surfing"
+      }
+    },
+    {
+      "id": "TSUNAMI",
+      "label": "현상",
+      "properties": {
+        "name": "전설적인 거대 파도"
+      }
+    },
+    {
+      "id": "P03",
+      "label": "포켓몬",
+      "properties": {
+        "name": "고라파덕"
+      }
+    },
+    {
+      "id": "P06",
+      "label": "포켓몬",
+      "properties": {
+        "name": "푸크린"
+      }
+    },
+    {
+      "id": "H15",
+      "label": "인간",
+      "properties": {
+        "name": "나옹"
+      }
+    },
+    {
+      "id": "P05",
+      "label": "포켓몬",
+      "properties": {
+        "name": "킹크랩"
+      }
+    },
+    {
+      "id": "P16",
+      "label": "포켓몬",
+      "properties": {
+        "name": "딱구리"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "PARTNERS_WITH",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E01"
+      }
+    },
+    {
+      "type": "DISLIKES",
+      "start_node_id": "P01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E01"
+      }
+    },
+    {
+      "type": "ATTACKS",
+      "start_node_id": "V02",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "ATTACKS",
+      "start_node_id": "V03",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "ATTACKS",
+      "start_node_id": "P15",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "H01",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "H01",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "H01",
+      "end_node_id": "P15",
+      "properties": {
+        "episode_number": "S1E02"
+      }
+    },
+    {
+      "type": "CAPTURES",
+      "start_node_id": "H01",
+      "end_node_id": "P13",
+      "properties": {
+        "episode_number": "S1E03"
+      }
+    },
+    {
+      "type": "EOLVES_INTO",
+      "start_node_id": "P13",
+      "end_node_id": "PH02",
+      "properties": {
+        "episode_number": "S1E03"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "P13",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E03"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "P02",
+      "properties": {
+        "outcome": "loss",
+        "episode_number": "S1E04"
+      }
+    },
+    {
+      "type": "ATTACKED_BY",
+      "start_node_id": "P02",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E04"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P02",
+      "end_node_id": "P05",
+      "properties": {
+        "episode_number": "S1E04"
+      }
+    },
+    {
+      "type": "CHALLENGES",
+      "start_node_id": "H01",
+      "end_node_id": "H03",
+      "properties": {
+        "episode_number": "S1E05"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "H03",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E05"
+      }
+    },
+    {
+      "type": "TRAVELS_WITH",
+      "start_node_id": "H01",
+      "end_node_id": "H03",
+      "properties": {
+        "episode_number": "S1E05"
+      }
+    },
+    {
+      "type": "MEETS",
+      "start_node_id": "H01",
+      "end_node_id": "O01",
+      "properties": {
+        "episode_number": "S1E06"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H01",
+      "end_node_id": "PH02",
+      "properties": {
+        "episode_number": "S1E06"
+      }
+    },
+    {
+      "type": "CAUGHT",
+      "start_node_id": "H03",
+      "end_node_id": "P07",
+      "properties": {
+        "episode_number": "S1E06"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E07"
+      }
+    },
+    {
+      "type": "PROTECTS",
+      "start_node_id": "H01",
+      "end_node_id": "O01",
+      "properties": {
+        "episode_number": "S1E07"
+      }
+    },
+    {
+      "type": "TRAVELS_TO",
+      "start_node_id": "H01",
+      "end_node_id": "S02",
+      "properties": {
+        "episode_number": "S1E08"
+      }
+    },
+    {
+      "type": "GOES_TO",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E09"
+      }
+    },
+    {
+      "type": "GOES_TO",
+      "start_node_id": "H02",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E09"
+      }
+    },
+    {
+      "type": "GOES_TO",
+      "start_node_id": "H03",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E09"
+      }
+    },
+    {
+      "type": "RESUCES",
+      "start_node_id": "P05",
+      "end_node_id": "O01",
+      "properties": {
+        "episode_number": "S1E10"
+      }
+    },
+    {
+      "type": "RESIDES_IN",
+      "start_node_id": "P26",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E11"
+      }
+    },
+    {
+      "type": "SAVED_BY",
+      "start_node_id": "P01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E11"
+      }
+    },
+    {
+      "type": "ATTACKS",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E12"
+      }
+    },
+    {
+      "type": "SAVES",
+      "start_node_id": "PH04",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E12"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E13"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E13"
+      }
+    },
+    {
+      "type": "TRAINS",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E14"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E14"
+      }
+    },
+    {
+      "type": "TRADES",
+      "start_node_id": "H01",
+      "end_node_id": "P27",
+      "properties": {
+        "episode_number": "S1E15"
+      }
+    },
+    {
+      "type": "LOST",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E15"
+      }
+    },
+    {
+      "type": "TEAMS_UP",
+      "start_node_id": "H01",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E16"
+      }
+    },
+    {
+      "type": "TEAMS_UP",
+      "start_node_id": "H01",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E16"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P05",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E16"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "P01",
+      "end_node_id": "V03",
+      "properties": {
+        "outcome": "hit",
+        "episode_number": "S1E17"
+      }
+    },
+    {
+      "type": "ESCAPES",
+      "start_node_id": "H18",
+      "end_node_id": "O01",
+      "properties": {
+        "episode_number": "S1E17"
+      }
+    },
+    {
+      "type": "HOSTS",
+      "start_node_id": "O01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E17"
+      }
+    },
+    {
+      "type": "COMPETES",
+      "start_node_id": "H02",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E18"
+      }
+    },
+    {
+      "type": "COMPETES",
+      "start_node_id": "H02",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E18"
+      }
+    },
+    {
+      "type": "WITNESSES",
+      "start_node_id": "S01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E19"
+      }
+    },
+    {
+      "type": "WITNESSES",
+      "start_node_id": "S01",
+      "end_node_id": "H02",
+      "properties": {
+        "episode_number": "S1E19"
+      }
+    },
+    {
+      "type": "APPEASES",
+      "start_node_id": "H02",
+      "end_node_id": "P03",
+      "properties": {
+        "episode_number": "S1E19"
+      }
+    },
+    {
+      "type": "CATCHES",
+      "start_node_id": "H02",
+      "end_node_id": "P04",
+      "properties": {
+        "episode_number": "S1E19"
+      }
+    },
+    {
+      "type": "EXPERIENCES",
+      "start_node_id": "S01",
+      "end_node_id": "PH01",
+      "properties": {
+        "episode_number": "S1E19"
+      }
+    },
+    {
+      "type": "ATTENDS",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E20"
+      }
+    },
+    {
+      "type": "FALLS_IN_LOVE_WITH",
+      "start_node_id": "H03",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E20"
+      }
+    },
+    {
+      "type": "FALLS_IN_LOVE_WITH",
+      "start_node_id": "V01",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E20"
+      }
+    },
+    {
+      "type": "POSSESSED_BY",
+      "start_node_id": "P06",
+      "end_node_id": "H03",
+      "properties": {
+        "episode_number": "S1E20"
+      }
+    },
+    {
+      "type": "POSSESSED_BY",
+      "start_node_id": "P06",
+      "end_node_id": "V01",
+      "properties": {
+        "episode_number": "S1E20"
+      }
+    },
+    {
+      "type": "RELEASED",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E21"
+      }
+    },
+    {
+      "type": "FREED",
+      "start_node_id": "P01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E21"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "S07",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E22"
+      }
+    },
+    {
+      "type": "ENCOUNTERS",
+      "start_node_id": "O01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E23"
+      }
+    },
+    {
+      "type": "BECOMES_FRIEND",
+      "start_node_id": "H01",
+      "end_node_id": "P26",
+      "properties": {
+        "episode_number": "S1E23"
+      }
+    },
+    {
+      "type": "BATTLES",
+      "start_node_id": "H01",
+      "end_node_id": "V01",
+      "properties": {
+        "episode_number": "S1E24"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H05",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E24"
+      }
+    },
+    {
+      "type": "TRANSFORMS",
+      "start_node_id": "V01",
+      "end_node_id": "H01",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E24"
+      }
+    },
+    {
+      "type": "MEDITATES",
+      "start_node_id": "H05",
+      "end_node_id": "V01",
+      "properties": {
+        "episode_number": "S1E24"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "P05",
+      "properties": {
+        "outcome": "defeat",
+        "episode_number": "S1E25"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E26"
+      }
+    },
+    {
+      "type": "STOPS",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E27"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "S01",
+      "end_node_id": "PH05",
+      "properties": {
+        "outcome": "loss",
+        "episode_number": "S1E29"
+      }
+    },
+    {
+      "type": "GIVES_AWAY",
+      "start_node_id": "H01",
+      "end_node_id": "H03",
+      "properties": {
+        "episode_number": "S1E29"
+      }
+    },
+    {
+      "type": "PROMISES_TO_RETURN",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E29"
+      }
+    },
+    {
+      "type": "CATCHES",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E30"
+      }
+    },
+    {
+      "type": "EXPERIENCES",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E31"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "H20",
+      "properties": {
+        "outcome": "ongoing",
+        "episode_number": "S1E32"
+      }
+    },
+    {
+      "type": "HAS",
+      "start_node_id": "H02",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E32"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H05",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E33"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P04",
+      "end_node_id": "PH01",
+      "properties": {
+        "episode_number": "S1E33"
+      }
+    },
+    {
+      "type": "APPEARS_IN",
+      "start_node_id": "S01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E34"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E35"
+      }
+    },
+    {
+      "type": "EXPERIENCES",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E35"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H01",
+      "end_node_id": "S02",
+      "properties": {
+        "episode_number": "S1E36"
+      }
+    },
+    {
+      "type": "INTERFERES",
+      "start_node_id": "O01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E36"
+      }
+    },
+    {
+      "type": "POSSESSES",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E37"
+      }
+    },
+    {
+      "type": "CANNOT_DO",
+      "start_node_id": "P01",
+      "end_node_id": "PH05",
+      "properties": {
+        "reason": "Cannot change face",
+        "episode_number": "S1E37"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "V02",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E38"
+      }
+    },
+    {
+      "type": "ACCOMPANIES",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E38"
+      }
+    },
+    {
+      "type": "INVESTIGATES",
+      "start_node_id": "P01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E38"
+      }
+    },
+    {
+      "type": "BLAMED_FOR",
+      "start_node_id": "V02",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E38"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "S01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E39"
+      }
+    },
+    {
+      "type": "BELONGS_TO",
+      "start_node_id": "P06",
+      "end_node_id": "H18",
+      "properties": {
+        "episode_number": "S1E40"
+      }
+    },
+    {
+      "type": "HAS_RELATIONSHIP",
+      "start_node_id": "H18",
+      "end_node_id": "PH02",
+      "properties": {
+        "episode_number": "S1E40"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H01",
+      "end_node_id": "P25",
+      "properties": {
+        "episode_number": "S1E41"
+      }
+    },
+    {
+      "type": "PLANS",
+      "start_node_id": "O01",
+      "end_node_id": "P25",
+      "properties": {
+        "episode_number": "S1E41"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E43"
+      }
+    },
+    {
+      "type": "BATTLES",
+      "start_node_id": "H01",
+      "end_node_id": "P02",
+      "properties": {
+        "outcome": "disobedience",
+        "episode_number": "S1E44"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "PH05",
+      "end_node_id": "P06",
+      "properties": {
+        "new_form": "Parasect",
+        "episode_number": "S1E44"
+      }
+    },
+    {
+      "type": "FOLLOWS",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E45"
+      }
+    },
+    {
+      "type": "FIGHTS_WITH",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E46"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P02",
+      "end_node_id": "P03",
+      "properties": {
+        "episode_number": "S1E46"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "PH06",
+      "end_node_id": "H20",
+      "properties": {
+        "episode_number": "S1E46"
+      }
+    },
+    {
+      "type": "TREATS",
+      "start_node_id": "H05",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E47"
+      }
+    },
+    {
+      "type": "FALLS_IN_LOVE",
+      "start_node_id": "H05",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E48"
+      }
+    },
+    {
+      "type": "STEALS_FROM",
+      "start_node_id": "P26",
+      "end_node_id": "H02",
+      "properties": {
+        "episode_number": "S1E49"
+      }
+    },
+    {
+      "type": "OWNED_BY",
+      "start_node_id": "P01",
+      "end_node_id": "H02",
+      "properties": {
+        "episode_number": "S1E50"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E50"
+      }
+    },
+    {
+      "type": "EVOLVES_INTO",
+      "start_node_id": "P01",
+      "end_node_id": "PH02",
+      "properties": {
+        "episode_number": "S1E51"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H02",
+      "end_node_id": "V02",
+      "properties": {
+        "outcome": "defeated",
+        "episode_number": "S1E52"
+      }
+    },
+    {
+      "type": "USES",
+      "start_node_id": "V02",
+      "end_node_id": "P17",
+      "properties": {
+        "episode_number": "S1E52"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "H02",
+      "end_node_id": "P17",
+      "properties": {
+        "episode_number": "S1E52"
+      }
+    },
+    {
+      "type": "SAVES",
+      "start_node_id": "PH06",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E53"
+      }
+    },
+    {
+      "type": "TRAINS_WITH",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E54"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "V01",
+      "properties": {
+        "outcome": "defeat",
+        "episode_number": "S1E54"
+      }
+    },
+    {
+      "type": "ENCOUNTERS",
+      "start_node_id": "H01",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E54"
+      }
+    },
+    {
+      "type": "MEETS",
+      "start_node_id": "H01",
+      "end_node_id": "H18",
+      "properties": {
+        "episode_number": "S1E55"
+      }
+    },
+    {
+      "type": "EXPERIENCES",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E56"
+      }
+    },
+    {
+      "type": "OWNED_BY",
+      "start_node_id": "P01",
+      "end_node_id": "H02",
+      "properties": {
+        "episode_number": "S1E57"
+      }
+    },
+    {
+      "type": "FRAMED_BY",
+      "start_node_id": "H02",
+      "end_node_id": "V04",
+      "properties": {
+        "episode_number": "S1E57"
+      }
+    },
+    {
+      "type": "FRAMED_BY",
+      "start_node_id": "H02",
+      "end_node_id": "V05",
+      "properties": {
+        "episode_number": "S1E57"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "S01",
+      "end_node_id": "PH05",
+      "properties": {
+        "outcome": "in progress",
+        "episode_number": "S1E58"
+      }
+    },
+    {
+      "type": "FEATURES",
+      "start_node_id": "S01",
+      "end_node_id": "P06",
+      "properties": {
+        "episode_number": "S1E60"
+      }
+    },
+    {
+      "type": "CAUSES",
+      "start_node_id": "PH05",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E60"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H02",
+      "end_node_id": "O01",
+      "properties": {
+        "episode_number": "S1E61"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "O01",
+      "end_node_id": "V02",
+      "properties": {
+        "episode_number": "S1E61"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "O01",
+      "end_node_id": "V03",
+      "properties": {
+        "episode_number": "S1E61"
+      }
+    },
+    {
+      "type": "LEAVES",
+      "start_node_id": "H02",
+      "end_node_id": "P06",
+      "properties": {
+        "episode_number": "S1E61"
+      }
+    },
+    {
+      "type": "LEAVES",
+      "start_node_id": "H02",
+      "end_node_id": "P13",
+      "properties": {
+        "episode_number": "S1E61"
+      }
+    },
+    {
+      "type": "VICTIM",
+      "start_node_id": "S01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E62"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E63"
+      }
+    },
+    {
+      "type": "FEATURES",
+      "start_node_id": "S01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E64"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H02",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H03",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "OWNED_BY",
+      "start_node_id": "P04",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "AFFECTED_BY",
+      "start_node_id": "PH05",
+      "end_node_id": "P04",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "ENEMIES_WITH",
+      "start_node_id": "H09",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E65"
+      }
+    },
+    {
+      "type": "PARTICIPATES_IN",
+      "start_node_id": "H01",
+      "end_node_id": "S01",
+      "properties": {
+        "episode_number": "S1E66"
+      }
+    },
+    {
+      "type": "OWNED_BY",
+      "start_node_id": "P01",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E66"
+      }
+    },
+    {
+      "type": "MEETS",
+      "start_node_id": "H01",
+      "end_node_id": "H20",
+      "properties": {
+        "episode_number": "S1E67"
+      }
+    },
+    {
+      "type": "TARGETS",
+      "start_node_id": "O01",
+      "end_node_id": "P",
+      "properties": {
+        "episode_number": "S1E67"
+      }
+    },
+    {
+      "type": "GOES_TO",
+      "start_node_id": "H01",
+      "end_node_id": "S05",
+      "properties": {
+        "episode_number": "S1E68"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H01",
+      "end_node_id": "PH02",
+      "properties": {
+        "episode_number": "S1E68"
+      }
+    },
+    {
+      "type": "CAPTURES",
+      "start_node_id": "V02",
+      "end_node_id": "P06",
+      "properties": {
+        "episode_number": "S1E68"
+      }
+    },
+    {
+      "type": "DOES",
+      "start_node_id": "H01",
+      "end_node_id": "SURFING",
+      "properties": {
+        "episode_number": "S1E69"
+      }
+    },
+    {
+      "type": "RESUCES",
+      "start_node_id": "VINCENT",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E69"
+      }
+    },
+    {
+      "type": "CONTAINS",
+      "start_node_id": "TSUNAMI",
+      "end_node_id": "WATER",
+      "properties": {
+        "episode_number": "S1E69"
+      }
+    },
+    {
+      "type": "AUDITIONS_FOR",
+      "start_node_id": "H01",
+      "end_node_id": "P03",
+      "properties": {
+        "episode_number": "S1E71"
+      }
+    },
+    {
+      "type": "AUDITIONS_FOR",
+      "start_node_id": "H02",
+      "end_node_id": "P03",
+      "properties": {
+        "episode_number": "S1E71"
+      }
+    },
+    {
+      "type": "AUDITIONS_WITH",
+      "start_node_id": "O01",
+      "end_node_id": "P06",
+      "properties": {
+        "episode_number": "S1E71"
+      }
+    },
+    {
+      "type": "CHALLENGES",
+      "start_node_id": "H01",
+      "end_node_id": "H15",
+      "properties": {
+        "reason": "female Meowth",
+        "episode_number": "S1E72"
+      }
+    },
+    {
+      "type": "TRAINS_WITH",
+      "start_node_id": "H01",
+      "end_node_id": "S07",
+      "properties": {
+        "episode_number": "S1E73"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "PH05",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E74"
+      }
+    },
+    {
+      "type": "HELPS",
+      "start_node_id": "H01",
+      "end_node_id": "H02",
+      "properties": {
+        "episode_number": "S1E75"
+      }
+    },
+    {
+      "type": "FIGHTS_IN",
+      "start_node_id": "S01",
+      "end_node_id": "P05",
+      "properties": {
+        "episode_number": "S1E77"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "S01",
+      "end_node_id": "PH05",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E78"
+      }
+    },
+    {
+      "type": "LOSES_TO",
+      "start_node_id": "H20",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E79"
+      }
+    },
+    {
+      "type": "DEFEATS",
+      "start_node_id": "P16",
+      "end_node_id": "PH05",
+      "properties": {
+        "episode_number": "S1E79"
+      }
+    },
+    {
+      "type": "FIGHTS",
+      "start_node_id": "H01",
+      "end_node_id": "H20",
+      "properties": {
+        "outcome": "victory",
+        "episode_number": "S1E80"
+      }
+    },
+    {
+      "type": "MEETS",
+      "start_node_id": "H01",
+      "end_node_id": "H21",
+      "properties": {
+        "episode_number": "S1E80"
+      }
+    },
+    {
+      "type": "STEALS",
+      "start_node_id": "O01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E80"
+      }
+    },
+    {
+      "type": "LOSES",
+      "start_node_id": "H01",
+      "end_node_id": "H05",
+      "properties": {
+        "reason": "due to his choice to send out Charizard, willfully knowing that Charizard would let Ritchie move on to the quarterfinals.",
+        "episode_number": "S1E81"
+      }
+    },
+    {
+      "type": "RESCUES",
+      "start_node_id": "H01",
+      "end_node_id": "P01",
+      "properties": {
+        "episode_number": "S1E81"
+      }
+    },
+    {
+      "type": "CONVINCES",
+      "start_node_id": "H02",
+      "end_node_id": "H01",
+      "properties": {
+        "episode_number": "S1E82"
+      }
+    },
+    {
+      "type": "LOSSES_TO",
+      "start_node_id": "H01",
+      "end_node_id": "PH06",
+      "properties": {
+        "episode_number": "S1E82"
+      }
+    }
+  ]
+}

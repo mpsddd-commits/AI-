@@ -63,7 +63,7 @@ def run():
     # config 매개변수의 'recursion_limit'은 그래프 내에서 노드가 실행되는 최대 횟수를 제한합니다.
     # 이 코드의 의도대로라면 ["A", "B", "A", "B", ...] 순서로 총 7개 이상 쌓여야 종료되지만,
     # 제한을 4로 두었기 때문에 4번째 노드 실행 시점에서 에러가 발생합니다.
-    graph.invoke({"aggregate": []}, config={"recursion_limit": 4})
+    graph.invoke({"aggregate": []}, config={"recursion_limit": 10})
 
   except GraphRecursionError as e:
     # 설정한 재귀 제한(recursion_limit)을 초과했을 때 발생하는 에러 처리

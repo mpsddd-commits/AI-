@@ -1,11 +1,13 @@
 from src.save_image import save_graph_image
 from typing_extensions import TypedDict
 from langgraph.graph import StateGraph, START
+from pydantic import BaseModel
 
 # 1. 그래프 상태(State) 정의
 # 그래프 전체에서 공유되는 데이터의 스키마를 정의합니다.
 class State(TypedDict):
-  value_1: str  # 문자열 데이터
+# class State(BaseModel):
+  value_1: str  # 문자열 데이터 type dict는 힌트지 틀린값이 나온다고 문제는 없다.
   value_2: int  # 정수형 데이터
 
 # 2. 노드(Node) 함수들 정의
@@ -20,6 +22,7 @@ def step_2(state: State):
   print("--- step_2 실행 ---")
   current_value_1 = state["value_1"]
   return {"value_1": f"{current_value_1} b"}
+  # return {"value_1": {current_value_1} * 10}
 
 def step_3(state: State):
   """세 번째 단계: value_2에 숫자 10을 할당"""

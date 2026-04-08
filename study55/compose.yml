@@ -1,0 +1,25 @@
+services:
+  unsloth:
+    container_name: unsloth
+    image: unsloth/unsloth
+    ports:
+      - "8888:8888"
+      - "22:22"
+    environment:
+      - JUPYTER_PASSWORD=1234
+    volumes:
+      - ./work:/workspace/work:rw
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/login"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped

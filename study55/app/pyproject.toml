@@ -1,0 +1,23 @@
+[project]
+name = "app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "datasets>=2.19.1",
+    "huggingface-hub>=1.8.0",
+    "pydantic-settings>=2.13.1",
+    "torch>=2.6.0",
+    "torchaudio>=2.6.0",
+    "torchvision>=0.21.0",
+    "transformers>=5.4.0",
+    "unsloth>=2025.4.7",
+    "unsloth-zoo>=2025.4.4",
+]
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu124"
+
+[tool.uv.sources]
+transformers = { git = "https://github.com/huggingface/transformers.git" }

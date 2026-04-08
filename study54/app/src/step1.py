@@ -37,7 +37,7 @@ def run():
     if filename.endswith(".txt"):
         
       # 파일명이 "Book1"으로 시작하는 파일만 골라냄
-      if filename.startswith("Book3"):
+      if filename.startswith("Book7"):
         print("파일명:", filename)
         
         # 정제 함수 호출

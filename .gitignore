@@ -19,3 +19,5 @@ __pycache__/
 
 .env
 .git
+.venv
+__pycache__

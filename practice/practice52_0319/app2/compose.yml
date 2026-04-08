@@ -1,0 +1,56 @@
+services:
+  spark-master:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-master
+    user: root
+    # [추가] 호스트의 D:/IDE/work를 컨테이너 내부의 /data 폴더로 연결
+    volumes:
+      - D:/IDE/work:/data
+    environment:
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MASTER_PORT=7077
+      # ... 나머지 동일
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+
+  spark-worker-1:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-worker-1
+    user: root
+    environment:
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    volumes:
+      - spark-work-1:/opt/spark/work
+      - D:/IDE/work:/data
+    depends_on:
+      - spark-master
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+  spark-worker-2:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-worker-2
+    user: root
+    volumes:
+      - spark-work-2:/opt/spark/work
+      - D:/IDE/work:/data
+    depends_on:
+      - spark-master
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  spark-work-1:
+  spark-work-2:
+  

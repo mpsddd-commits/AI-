@@ -1,0 +1,91 @@
+version: "3.8"
+
+services:
+  # =========================
+  # MariaDB
+  # =========================
+  mariadb2:
+    image: mariadb:12.1.2
+    container_name: mariadb2
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: db_metro
+    ports:
+      - "3306:3306"
+    command: --local-infile=1
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    networks:
+      - spark-network
+
+  # =========================
+  # Spark Master
+  # =========================
+  spark-master:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-master
+    hostname: spark-master
+    user: root
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - ./app/jars:/app/jars
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+
+  # =========================
+  # Worker 1
+  # =========================
+  spark-worker-1:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-worker-1
+    user: root
+    depends_on:
+      - spark-master
+    volumes:
+      - ./app/jars:/app/jars
+      - spark-work-1:/opt/spark/work
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+  # =========================
+  # Worker 2
+  # =========================
+  spark-worker-2:
+    image: apache/spark:4.1.1-java21-python3
+    container_name: spark-worker-2
+    user: root
+    depends_on:
+      - spark-master
+    volumes:
+      - ./app/jars:/app/jars
+      - spark-work-2:/opt/spark/work
+    networks:
+      - spark-network
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+  # =========================
+  # FastAPI (ETL 서버)
+  # =========================
+  fastapi:
+    build: .
+    container_name: fastapi
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mariadb2
+      - spark-master
+    networks:
+      - spark-network
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  mariadb-data:
+  spark-work-1:
+  spark-work-2:

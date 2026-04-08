@@ -1,0 +1,24 @@
+services:
+  master:
+    container_name: master
+    image: my-spark:2
+    ports:
+      - 8080:8080
+      - 7077:7077
+    environment:
+      - SPARK_MODE=localhost
+      - SPARK_MODE=master
+    command: "start-master.sh"
+
+  worker:
+    image: my-spark:2
+    container_name: spark-worker
+    ports:
+      - 8081:8081
+    depends_on:
+      - master
+    environment:
+      - SPARK_PUBLIC_DNS=localhost
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://master:7077
+    command: start-worker.sh spark://master:7077

@@ -1,13 +1,13 @@
 from langchain.tools import tool
 from src.core import Query, logger
 from settings import settings
-import httpx
-import json
-import re
 from pydantic import BaseModel, Field
 from fastapi import APIRouter, HTTPException, Depends
 from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
+import httpx
+import json
+import re
 
 class MovieItem(BaseModel):
   imdbID: str = Field(description="영화 고유 ID") 

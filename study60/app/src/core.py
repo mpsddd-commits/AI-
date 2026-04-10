@@ -22,6 +22,8 @@ class MovieItem(BaseModel):
   poster: str = Field(description="포스터 이미지 URL")
   year: str = Field(description="개봉 년도")
   type: str = Field(description="유형 (movie, series 등)")
+  plot: str = Field(description="줄거리")  
+  actors: str = Field(description="출연 배우")
 
 class MovieListResponse(BaseModel):
   movies: list[MovieItem] = Field(description="검색된 영화 리스트")
@@ -60,7 +62,8 @@ async def search_movie_info(query: str) -> str:
             "title": m.get("Title"),
             "poster": m.get("Poster"),
             "year": m.get("Year"),
-            "type": m.get("Type")
+            "type": m.get("Type"),
+            "plot": m.get("Plot")
           } for m in search_results
         ]
         return json.dumps(formatted_data, ensure_ascii=False)
@@ -73,8 +76,98 @@ async def search_movie_info(query: str) -> str:
     except Exception as e:
       logger.error(f"예상치 못한 오류: {str(e)}")
       return json.dumps({"error": "네트워크 연결이 원활하지 않습니다."}, ensure_ascii=False)
+    
+# @tool
+# async def search_movie_details(query: str) -> str:
+#   """
+#   영화 제목(query)을 입력받아 검색된 영화의 상세 정보를 JSON 형식의 문자열로 반환합니다.
+#   반환 구조: [{'imdbID': ..., 'title': ..., 'poster': ..., 'year': ..., 'type': ...}, ...]
+#   """
+#   async with httpx.AsyncClient() as client:
+#     try:
+#       response = await client.get(
+#         settings.movie_api_url,
+#         params={"s": query, "apikey": settings.movie_api_key},
+#         timeout=10.0
+#       )
+#       response.raise_for_status()
+#       data = response.json()    
 
-tools = [search_movie_info]
+#       if data.get("Response") == "True":
+#         search_results = data.get("Search", [])
+#         formatted_data = [
+#           {
+#             "imdbID": m.get("imdbID"),
+#             "title": m.get("Title"),
+#             "poster": m.get("Poster"),
+#             "year": m.get("Year"),
+#             "type": m.get("Type"),
+#             "plot": m.get("Plot")
+#           } for m in search_results
+#         ]
+#       return json.dumps({"status": "success", "results": formatted_data}, ensure_ascii=False)
+#     except httpx.HTTPStatusError as e:
+#       logger.error(f"API 요청 오류: {e.response.status_code}")
+#       return json.dumps({"error": "영화 서버 응답 오류가 발생했습니다."}, ensure_ascii=False)
+#     except Exception as e:
+#       logger.error(f"예상치 못한 오류: {str(e)}")
+#       return json.dumps({"error": "네트워크 연결이 원활하지 않습니다."}, ensure_ascii=False)
+
+@tool
+async def search_movie_details(query: str) -> str:
+    """
+    영화 제목(query)을 입력받아 검색된 영화의 상세 정보(줄거리, 배우 포함)를 반환합니다.
+    """
+    async with httpx.AsyncClient() as client:
+        try:
+            # 1. 목록 검색 (By Search)
+            search_res = await client.get(
+                settings.movie_api_url,
+                params={"s": query, "apikey": settings.movie_api_key},
+                timeout=10.0
+            )
+            search_res.raise_for_status()
+            search_data = search_res.json()
+
+            if search_data.get("Response") != "True":
+                return json.dumps({"error": f"'{query}' 결과 없음"}, ensure_ascii=False)
+
+            search_results = search_data.get("Search", [])
+            detailed_results = []
+
+            # 2. 검색된 결과 중 상위 몇 개에 대해 '상세 정보(By ID)'를 다시 요청
+            for movie in search_results[:1]:
+                movie_id = movie.get("imdbID")
+                
+                # 상세 조회 API 호출 (plot=full 필수)
+                detail_res = await client.get(
+                    settings.movie_api_url,
+                    params={
+                        "i": movie_id,
+                        "plot": "full", # 전체 줄거리를 가져오는 옵션
+                        "apikey": settings.movie_api_key
+                    }
+                )
+                d = detail_res.json()
+                
+                # 모델 필드명(소문자)과 API 응답 필드명(대문자) 매핑
+                detailed_results.append({
+                    "imdbID": d.get("imdbID"),
+                    "title": d.get("Title"),
+                    "poster": d.get("Poster"),
+                    "year": d.get("Year"),
+                    "type": d.get("Type"),
+                    "plot": d.get("Plot"),   # 이제 데이터가 들어옵니다!
+                    "actors": d.get("Actors") # 이제 데이터가 들어옵니다!
+                })
+
+            return json.dumps({"status": "success", "results": detailed_results}, ensure_ascii=False)
+
+        except Exception as e:
+            logger.error(f"도구 실행 중 오류: {str(e)}")
+            return json.dumps({"error": "데이터를 가져오는 중 오류 발생"}, ensure_ascii=False)
+        
+tools = [search_movie_details]
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -87,7 +180,8 @@ async def lifespan(app: FastAPI):
     )
     schema = MovieListResponse.model_json_schema()
     system_message = (
-      f"당신은 영화 정보 전문가입니다. 반드시 search_movie_info 도구를 사용해 정보를 찾으세요. "
+      f"당신은 영화 정보 전문가입니다. 반드시 search_movie_details 도구를 사용해 정보를 찾으세요. "
+      f"특히 영화의 상세 줄거리(plot)를 반드시 포함하여 응답하세요. "
       f"응답은 반드시 다음 JSON 스키마를 따르는 순수한 JSON 객체여야 합니다: {schema}. "
       f"설명이나 인사말 없이 JSON만 출력하세요."
     )

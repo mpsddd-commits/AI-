@@ -6,6 +6,11 @@ class Settings(BaseSettings):
   graph_image_path: str = "images"
   movie_api_url: str
   movie_api_key: str
+  mariadb_user: str
+  mariadb_password: str
+  mariadb_host: str
+  mariadb_database: str
+  mariadb_port: int
 
   model_config = SettingsConfigDict(
     env_file=".env",

@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
 from langchain.tools import tool
+from src.db import save
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -76,42 +77,6 @@ async def search_movie_info(query: str) -> str:
     except Exception as e:
       logger.error(f"예상치 못한 오류: {str(e)}")
       return json.dumps({"error": "네트워크 연결이 원활하지 않습니다."}, ensure_ascii=False)
-    
-# @tool
-# async def search_movie_details(query: str) -> str:
-#   """
-#   영화 제목(query)을 입력받아 검색된 영화의 상세 정보를 JSON 형식의 문자열로 반환합니다.
-#   반환 구조: [{'imdbID': ..., 'title': ..., 'poster': ..., 'year': ..., 'type': ...}, ...]
-#   """
-#   async with httpx.AsyncClient() as client:
-#     try:
-#       response = await client.get(
-#         settings.movie_api_url,
-#         params={"s": query, "apikey": settings.movie_api_key},
-#         timeout=10.0
-#       )
-#       response.raise_for_status()
-#       data = response.json()    
-
-#       if data.get("Response") == "True":
-#         search_results = data.get("Search", [])
-#         formatted_data = [
-#           {
-#             "imdbID": m.get("imdbID"),
-#             "title": m.get("Title"),
-#             "poster": m.get("Poster"),
-#             "year": m.get("Year"),
-#             "type": m.get("Type"),
-#             "plot": m.get("Plot")
-#           } for m in search_results
-#         ]
-#       return json.dumps({"status": "success", "results": formatted_data}, ensure_ascii=False)
-#     except httpx.HTTPStatusError as e:
-#       logger.error(f"API 요청 오류: {e.response.status_code}")
-#       return json.dumps({"error": "영화 서버 응답 오류가 발생했습니다."}, ensure_ascii=False)
-#     except Exception as e:
-#       logger.error(f"예상치 못한 오류: {str(e)}")
-#       return json.dumps({"error": "네트워크 연결이 원활하지 않습니다."}, ensure_ascii=False)
 
 @tool
 async def search_movie_details(query: str) -> str:
@@ -136,9 +101,9 @@ async def search_movie_details(query: str) -> str:
             detailed_results = []
 
             # 2. 검색된 결과 중 상위 몇 개에 대해 '상세 정보(By ID)'를 다시 요청
-            for movie in search_results[:1]:
+            for movie in search_results[:5]:
                 movie_id = movie.get("imdbID")
-                
+                  
                 # 상세 조회 API 호출 (plot=full 필수)
                 detail_res = await client.get(
                     settings.movie_api_url,
@@ -157,8 +122,8 @@ async def search_movie_details(query: str) -> str:
                     "poster": d.get("Poster"),
                     "year": d.get("Year"),
                     "type": d.get("Type"),
-                    "plot": d.get("Plot"),   # 이제 데이터가 들어옵니다!
-                    "actors": d.get("Actors") # 이제 데이터가 들어옵니다!
+                    "plot": d.get("Plot"),   
+                    "actors": d.get("Actors")
                 })
 
             return json.dumps({"status": "success", "results": detailed_results}, ensure_ascii=False)
@@ -167,7 +132,49 @@ async def search_movie_details(query: str) -> str:
             logger.error(f"도구 실행 중 오류: {str(e)}")
             return json.dumps({"error": "데이터를 가져오는 중 오류 발생"}, ensure_ascii=False)
         
-tools = [search_movie_details]
+@tool
+async def insert_data(movie_data: dict) -> str:
+    """
+    영화 정보를 데이터베이스의 movies 테이블에 저장하거나 업데이트합니다.
+    
+    Args:
+        movie_info (dict): 다음 키를 포함하는 사전 객체입니다:
+            - imdbID (str): 영화 고유 ID
+            - title (str): 영화 제목
+            - poster (str): 포스터 URL
+            - year (str): 개봉 연도
+            - type (str): 콘텐츠 유형
+            - plot (str): 전체 줄거리
+            - actors (str): 출연 배우 목록
+            
+    Returns:
+        str: 저장 성공 여부를 알리는 메시지
+    """
+    try:
+        sql_create = f"""
+              create table if not exists omdb.movies (
+              imdbID VARCHAR(50) PRIMARY KEY,
+              title VARCHAR(255),
+              poster VARCHAR(255),
+              year VARCHAR(4),
+              type VARCHAR(20),
+              plot VARCHAR(5000),
+              actors VARCHAR(1000)
+              )
+              """
+        save(sql_create)
+        sql_insert = f"""
+              INSERT INTO movies (imdbID, title, poster, year, type, plot, actors)
+              VALUES ('{movie_data['imdbID']}', '{movie_data['title']}', '{movie_data['poster']}', '{movie_data['year']}', '{movie_data['type']}', '{movie_data['plot']}', '{movie_data['actors']}')
+              """
+        save(sql_insert)
+        logger.info(f"데이터베이스에 저장된 영화 정보: {movie_data}")
+        return json.dumps({"status": "success", "message": "영화 정보가 데이터베이스에 저장되었습니다."}, ensure_ascii=False)
+    except Exception as e:
+        logger.error(f"데이터 저장 중 오류: {str(e)}")
+        return json.dumps({"error": "데이터 저장 중 오류 발생"}, ensure_ascii=False)
+   
+tools = [search_movie_info, search_movie_details, insert_data]
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -180,11 +187,12 @@ async def lifespan(app: FastAPI):
     )
     schema = MovieListResponse.model_json_schema()
     system_message = (
-      f"당신은 영화 정보 전문가입니다. 반드시 search_movie_details 도구를 사용해 정보를 찾으세요. "
-      f"특히 영화의 상세 줄거리(plot)를 반드시 포함하여 응답하세요. "
-      f"응답은 반드시 다음 JSON 스키마를 따르는 순수한 JSON 객체여야 합니다: {schema}. "
-      f"설명이나 인사말 없이 JSON만 출력하세요."
-    )
+    f"당신은 영화 정보 전문가입니다. 다음 절차를 엄격히 준수하세요:\n"
+    f"1. search_movie_details를 사용하여 상세 정보를 가져온다.\n"
+    f"2. 가져온 정보를 insert_data를 사용하여 데이터베이스에 저장한다. (반드시 호출할 것!)\n"
+    f"3. 마지막으로 사용자에게 {schema} 형식에 맞춰 JSON을 출력한다.\n"
+    f"설명이나 인사말 없이 오직 JSON만 출력하세요."
+  )
     app.state.agent_executor = create_react_agent(llm, tools, prompt=system_message)
     
     logger.info("Agent Session Created Successfully!")

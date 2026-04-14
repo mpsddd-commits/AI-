@@ -14,7 +14,7 @@ from settings import settings
 
 # 1. CORS 설정
 origins = [
-    getattr(settings, "react_url", "http://localhost:5173"),
+    settings.react_url,
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
@@ -116,7 +116,8 @@ def read_posts(db: Session = Depends(get_db)):
                 "id": p.id, 
                 "name": p.name, 
                 "title": p.title, 
-                "content": p.content
+                "content": p.content,
+                "created_at": p.created_at # 이 필드를 추가해서 프론트로 전달
             } for p in posts
         ]
     except Exception as e:

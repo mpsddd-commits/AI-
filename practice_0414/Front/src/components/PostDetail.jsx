@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PostDetail = ({ post, onBack }) => {
   if (!post) return null;
 

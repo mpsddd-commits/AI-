@@ -6,18 +6,17 @@ from typing import Optional
 def create_post(name: str, title: str, content: str):
     """새로운 게시글을 생성합니다. 생성 후 제목 끝에 ID를 자동으로 붙입니다."""
     with SessionLocal() as db:
-        # 1. 먼저 게시글 객체 생성 및 1차 저장
+        # 1. 게시글 객체 생성 (제목 수정 없이 입력받은 그대로 저장)
         new_post = Post(name=name, title=title, content=content)
         db.add(new_post)
-        db.commit() # 여기서 ID가 생성됩니다.
-        db.refresh(new_post) # 생성된 ID를 파이썬 객체로 불러옵니다.
+        
+        # 2. DB에 저장
+        db.commit() 
+        
+        # 3. 생성된 ID 등 최신 정보를 객체에 반영
+        db.refresh(new_post) 
 
-        updated_title = f"{title} (ID: {new_post.id})"
-        new_post.title = updated_title
-        db.commit()
-        db.refresh(new_post)
-
-        # 리액트가 바로 쓸 수 있는 딕셔너리 형태로 반환
+        # 4. 리액트가 바로 쓸 수 있는 딕셔너리 형태로 반환
         return {
             "id": new_post.id,
             "name": new_post.name,

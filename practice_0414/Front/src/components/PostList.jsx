@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PostList = ({ posts, onPostClick }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -53,6 +51,16 @@ const PostList = ({ posts, onPostClick }) => {
                   alignItems: 'center',
                   gap: '10px'
                 }}>
+                  {/* 여기에 ID 표시 추가: #001 스타일로 표시 */}
+                  <span style={{ 
+                    color: 'var(--neon-cyan)', 
+                    fontSize: '0.9rem', 
+                    fontFamily: 'Orbitron',
+                    opacity: 0.8 
+                  }}>
+                    #{String(post.id).padStart(3, '0')}
+                  </span>
+                  
                   {post.title}
                 </h4>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>

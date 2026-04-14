@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime # DateTime 추가
 from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.sql import func # func 추가
 from settings import settings
 
 # 1. DB 연결 설정
@@ -15,6 +16,8 @@ class Post(Base):
     name = Column(String(50), nullable=False)
     title = Column(String(200), nullable=False)
     content = Column(Text, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
 # 3. 테이블 생성 함수
 def init_db():

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const PostForm = ({ onPostCreated }) => {
   const [prompt, setPrompt] = useState('');

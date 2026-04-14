@@ -59,64 +59,47 @@ class PromptRequest(BaseModel):
 @app.post("/chat")
 async def chat(request: PromptRequest):
     logger.info(f"📩 요청 수신: {request.prompt}")
-    
     try:
-        # [중요] recursion_limit을 설정하여 무한 루프(무한 대기)를 방지합니다.
-        # 도구 실행(1회) -> 결과 보고(1회) 정도면 충분하므로 10으로 제한합니다.
         initial_state = {"messages": [("user", request.prompt)]}
-        final_state = app_graph.invoke(
-            initial_state, 
-            config={"recursion_limit": 10} 
-        )
-        for m in final_state["messages"]:
-            if hasattr(m, 'tool_calls'):
-                print(f"🛠️ 도구 호출 시도: {m.tool_calls}")
+        final_state = app_graph.invoke(initial_state, config={"recursion_limit": 10})
+
+        # 1. 도구 실행 메시지(Tool Message)를 우선적으로 찾습니다.
+        # 최신 메시지부터 역순으로 탐색
+        for m in reversed(final_state["messages"]):
             if m.type == 'tool':
-                print(f"✅ 도구 실행 결과: {m.content}")
-                
-        # 마지막 AI 메시지 추출
+                try:
+                    # m.content가 문자열 형태의 JSON이므로 파싱
+                    tool_result = json.loads(m.content)
+                    
+                    # 도구 리턴값이 우리가 원하는 게시글 형식을 포함하고 있다면 즉시 리턴
+                    if isinstance(tool_result, dict) and "id" in tool_result:
+                        return {
+                            "response": {
+                                "id": tool_result["id"],
+                                "name": tool_result["name"],
+                                "title": tool_result["title"],
+                                "content": tool_result["content"]
+                            }
+                        }
+                except:
+                    # 파싱 실패 시 일반 텍스트로 처리하기 위해 패스
+                    continue
+
+        # 2. 도구 결과가 없거나 파싱 실패 시 기존 AI 답변 추출 로직 실행
         last_message = final_state["messages"][-1]
         raw_response = last_message.content
         
-        print(f"🔍 AI 원본 응답 로그:\n{raw_response}\n{'-'*30}")
-
-        # 1. JSON 패턴 추출 (정규식)
-        # AI가 앞뒤에 설명을 붙여도 JSON만 골라냅니다.
+        # (기존 정규식 JSON 추출 로직...)
         json_match = re.search(r'(\{.*\}|\[.*\])', raw_response, re.DOTALL)
-        
         if json_match:
-            json_str = json_match.group()
-            try:
-                structured_data = json.loads(json_str)
-                # AI가 'data' 키를 썼는지, 아니면 리스트 자체인지 확인
-                if isinstance(structured_data, dict):
-                    content = structured_data.get("data", structured_data.get("response", []))
-                    # 만약 dict인데 위 키들이 없다면 dict 자체를 리스트에 담거나 조사 필요
-                    return {"response": content}
-                return {"response": structured_data} # 리스트인 경우
-            except json.JSONDecodeError:
-                pass
+            # ... 기존 코드 ...
+            return {"response": json.loads(json_match.group())}
 
-            # 만약 JSON 파싱에 실패했지만, AI가 도구를 실행했다면 
-            # final_state["messages"]를 뒤져서 도구 결과를 강제로 추출할 수도 있습니다.
-            for m in reversed(final_state["messages"]):
-                if m.type == 'tool':
-                    try:
-                        # 도구 실행 결과가 리스트 형태의 문자열이라면 파싱
-                        return {"response": json.loads(m.content)}
-                    except:
-                        return {"response": m.content}
-
-            return {"response": [], "error": "목록을 형식에 맞게 가져오지 못했습니다."}
+        return {"response": raw_response}
 
     except Exception as e:
         logger.error(f"🚨 시스템 오류 발생: {str(e)}")
-        # 무한 루프나 타임아웃 발생 시 프론트엔드에 에러 반환
-        return {
-            "response": [],
-            "error": "AI가 응답을 생성하는 중에 시간이 초과되었거나 오류가 발생했습니다.",
-            "details": str(e)
-        }
+        return {"response": [], "error": str(e)}
     
 @app.get("/posts")
 def read_posts(db: Session = Depends(get_db)):

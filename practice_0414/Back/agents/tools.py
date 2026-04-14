@@ -4,20 +4,27 @@ from typing import Optional
 
 @tool
 def create_post(name: str, title: str, content: str):
-    """
-    주어진 이름(name), 제목(title), 내용(content)을 사용하여 데이터베이스에 새로운 게시글을 저장합니다.
-    사용자가 제공하지 않은 정보는 빈 문자열로 처리하며, 절대로 임의의 데이터를 생성하지 마세요.
-    """
+    """새로운 게시글을 생성합니다. 생성 후 제목 끝에 ID를 자동으로 붙입니다."""
     with SessionLocal() as db:
-        try:
-            new_post = Post(name=name, title=title, content=content)
-            db.add(new_post)
-            db.commit()
-            db.refresh(new_post)
-            return f"성공: ID {new_post.id}로 게시글이 저장되었습니다."
-        except Exception as e:
-            db.rollback()
-            return f"에러 발생: {str(e)}"
+        # 1. 먼저 게시글 객체 생성 및 1차 저장
+        new_post = Post(name=name, title=title, content=content)
+        db.add(new_post)
+        db.commit() # 여기서 ID가 생성됩니다.
+        db.refresh(new_post) # 생성된 ID를 파이썬 객체로 불러옵니다.
+
+        updated_title = f"{title} (ID: {new_post.id})"
+        new_post.title = updated_title
+        db.commit()
+        db.refresh(new_post)
+
+        # 리액트가 바로 쓸 수 있는 딕셔너리 형태로 반환
+        return {
+            "id": new_post.id,
+            "name": new_post.name,
+            "title": new_post.title,
+            "content": new_post.content,
+            "message": "성공적으로 생성되었습니다."
+        }
 
 # @tool
 # def list_all_posts():

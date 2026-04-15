@@ -4,7 +4,7 @@ from typing import Optional
 
 @tool
 def create_post(name: str, title: str, content: str):
-    """새로운 게시글을 생성합니다. 생성 후 제목 끝에 ID를 자동으로 붙입니다."""
+    """새로운 게시글을 생성합니다. 이름, 제목, 내용은 입력받은 그대로 저장하며, AI가 임의로 수정하지 않습니다."""
     with SessionLocal() as db:
         # 1. 게시글 객체 생성 (제목 수정 없이 입력받은 그대로 저장)
         new_post = Post(name=name, title=title, content=content)
@@ -61,7 +61,7 @@ def update_or_delete_post(action: str, post_id: int, title: Optional[str] = None
         if not post: return "해당 ID의 글을 찾을 수 없습니다."
         
         if action == "delete":
-            db.delete(post)
+            post.del_yn = False
             db.commit()
             return f"ID {post_id} 삭제 완료."
         elif action == "update":

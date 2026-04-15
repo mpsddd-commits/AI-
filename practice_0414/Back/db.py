@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime # DateTime 추가
+from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, Boolean 
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.sql import func # func 추가
 from settings import settings
@@ -18,6 +18,7 @@ class Post(Base):
     content = Column(Text, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    del_yn = Column(Boolean, default=True)
 
 # 3. 테이블 생성 함수
 def init_db():

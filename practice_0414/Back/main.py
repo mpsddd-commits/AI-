@@ -108,7 +108,7 @@ def read_posts(db: Session = Depends(get_db)):
     """
     try:
         # DB에서 모든 게시글 조회 (최신순으로 정렬하고 싶다면 .order_by(Post.id.desc()) 추가)
-        posts = db.query(Post).order_by(Post.id.desc()).all()
+        posts = db.query(Post).filter(Post.del_yn == True).order_by(Post.id.desc()).all()
         
         # 클라이언트가 사용하기 편하게 리스트 형태로 변환
         return [

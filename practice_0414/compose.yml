@@ -1,0 +1,47 @@
+services:
+  # 1. MariaDB 서비스
+  db:
+    image: mariadb:12.1.2
+    container_name: mariadb_container
+    restart: always
+    environment:
+      # 초기 데이터베이스 생성 및 권한 설정
+      MARIADB_ROOT_PASSWORD: "1234"
+      MARIADB_DATABASE: "db_board"
+      MARIADB_USER: "user"      # root 외에 일반 사용자 생성을 권장합니다
+      MARIADB_PASSWORD: "1234"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 2. 백엔드 서비스 (FastAPI)
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: fastapi_backend
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy # DB가 준비된 후 실행
+    env_file:
+      - ./back/.env
+    # 핵심: 컨테이너 내부에서 호스트(Ollama)에 접근하기 위한 설정
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8001:8000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+
+volumes:
+  mariadb_data: # DB 데이터를 영구 보관하는 볼륨

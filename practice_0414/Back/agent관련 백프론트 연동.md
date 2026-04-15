@@ -18,6 +18,3 @@ uv add httpx
 uv add pymysql
 uv add sqlalchemy
 ```
-
-
-  "prompt": "이름은 이현서, 제목은 헤헤, 내용은 화이팅 "
